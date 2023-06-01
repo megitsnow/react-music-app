@@ -7,6 +7,9 @@
     background-color: white;
     box-shadow: 2px 2px 50px rgb(204,204,204);
     overflow: scroll;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    opacity: 0;
     h2 {
         padding: 2rem;
     }
@@ -16,11 +19,49 @@
     display: flex;
     align-items: center;
     padding: 1rem 2rem 1rem 2rem;
+    cursor: pointer;
     img {
         width: 30%;
+    }
+    &:hover {
+        background: #FAF9F6;
     }
 }
 
 .song-description {
     padding-left: 1rem;
+    h3 {
+        font-size: 1rem;
+    }
+    h4 {
+        font-size: 0.7rem;
+    }
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rbga(155,155,155,0.5) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(155,155,155,0.5);
+    border-radius: 20px;
+    border: transparent;
+}
+
+.selected {
+    background: red;
+}
+
+.active-library {
+    transform: translateX(0%);
+    opacity: 1;
 }
